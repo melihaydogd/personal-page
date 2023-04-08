@@ -18,7 +18,7 @@ export const SkillsCard = (props) => {
             {props.cardInfo?.term}
           </Typography>
           <ul style={{ padding: "1rem 1.5rem" }}>
-            {props.cardInfo?.skills.map((skill, index) => {
+            {props.cardInfo?.skills?.map((skill, index) => {
               return (
                 <li key={index} style={{ padding: "0.5rem 0" }}>
                   <Typography variant="p" color="text.secondary">
