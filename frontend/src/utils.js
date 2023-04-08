@@ -1,0 +1,1 @@
+export const dateOptions = { year: 'numeric', month: 'short' };
