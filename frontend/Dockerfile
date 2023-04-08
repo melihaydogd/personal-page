@@ -8,7 +8,7 @@ RUN npm install
 RUN npm install -g serve
 COPY . .
 
-RUN npm run build
+RUN REACT_APP_API_URL=$REACT_APP_API_URL npm run build
 
 EXPOSE 3000
 CMD ["serve", "-s", "build", "-l", "3000"]
