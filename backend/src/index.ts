@@ -18,9 +18,9 @@ app.use(function (req, res, next) {
     next();
 });
 
-mongoose.connect("mongodb://3.121.162.63:27017/personalDB?authSource=admin", {
-    user: process.env.DB_USERNAME,
-    pass: process.env.DB_PASSWORD,
+mongoose.connect(`mongodb://${process.env.MONGO_CONTAINER_NAME}:${process.env.MONGO_PORT}/personalDB?authSource=admin`, {
+    user: process.env.MONGO_USERNAME,
+    pass: process.env.MONGO_PASSWORD,
 });
 
 const educationSchema = new mongoose.Schema({
