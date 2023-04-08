@@ -15,13 +15,24 @@ app.use(
 app.use(express.static("public"));
 app.use(function (req, res, next) {
     res.header("Content-Type", "application/json");
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Allow-Methods", ["GET", "POST", "OPTIONS"]);
+    res.header("Access-Control-Allow-Headers", [
+        "Origin",
+        "Content-Type",
+        "Accept",
+    ]);
     next();
 });
 
-mongoose.connect(`mongodb://${process.env.MONGO_CONTAINER_NAME}:${process.env.MONGO_PORT}/personalDB?authSource=admin`, {
-    user: process.env.MONGO_USERNAME,
-    pass: process.env.MONGO_PASSWORD,
-});
+mongoose.connect(
+    `mongodb://${process.env.MONGO_CONTAINER_NAME}:${process.env.MONGO_PORT}/personalDB?authSource=admin`,
+    {
+        user: process.env.MONGO_USERNAME,
+        pass: process.env.MONGO_PASSWORD,
+    }
+);
 
 const educationSchema = new mongoose.Schema({
     university: String,
@@ -68,11 +79,7 @@ const activitySchema = new mongoose.Schema({
     startDate: Date,
     endDate: Date,
 });
-const Activity = mongoose.model(
-    "Activity",
-    activitySchema
-);
-
+const Activity = mongoose.model("Activity", activitySchema);
 
 app.route(`${apiVersion}/education`).get(function (req, res) {
     Education.findOne({}, { __v: 0 })
@@ -148,7 +155,6 @@ app.route(`${apiVersion}/activity`).get(function (req, res) {
             console.log(error.message);
         });
 });
-
 
 app.listen(8080, function () {
     console.log("Server started on port 8080");
