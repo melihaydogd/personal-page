@@ -135,7 +135,7 @@ app.route(`${apiVersion}/project`).get(function (req, res) {
 });
 
 app.route(`${apiVersion}/activity`).get(function (req, res) {
-    Activity.find({}, { __v: 0 })
+    Activity.findOne({}, { __v: 0 })
         .then(function (activity) {
             if (activity) {
                 const json = JSON.stringify(activity);
