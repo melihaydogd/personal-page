@@ -35,7 +35,7 @@ export const ProjectCard = (props) => {
             display: props.cardInfo?.certificate ? "inline-flex" : "none",
           }}
         >
-          <StyledAnchor href={props.cardInfo?.gitHub} target="_blank">
+          <StyledAnchor href={props.cardInfo?.certificate} target="_blank">
             Certificate
           </StyledAnchor>
         </Button>
