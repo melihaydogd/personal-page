@@ -32,7 +32,7 @@ export const Stepper = (props) => {
         enableMouseEvents={true}
         threshold={1}
       >
-        {props.cardInfo.map((cardInfo) => {
+        {props.cardInfo?.map((cardInfo) => {
           if (props.title === "Experience") {
             return <ExperienceCard key={cardInfo._id} cardInfo={cardInfo} />
           } else {

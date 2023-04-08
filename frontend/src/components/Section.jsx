@@ -25,7 +25,7 @@ export const Section = (props) => {
             overflowX: "scroll",
           }}
         >
-          {props.cardInfo.map((cardInfo) => {
+          {props.cardInfo?.map((cardInfo) => {
             return <SkillsCard key={cardInfo._id} cardInfo={cardInfo} />;
           })}
         </Box>
