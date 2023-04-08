@@ -3,11 +3,9 @@ import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
 import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
 import { ExperienceCard } from "./Card/ExperienceCard";
 import { ProjectCard } from "./Card/ProjectCard";
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const springConfig = {
   duration: "1s",
   easeFunction: "cubic-bezier(0.15, 0.3, 0.25, 1)",
@@ -25,22 +23,23 @@ export const Stepper = (props) => {
 
   return (
     <Box sx={{ maxWidth: 320, flexGrow: 1 }}>
-      <AutoPlaySwipeableViews
+      <SwipeableViews
         springConfig={springConfig}
-        interval={100000000000}
+        interval={10000}
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
-        enableMouseEvents
+        enableMouseEvents={true}
+        threshold={1}
       >
         {props.cardInfo.map((cardInfo) => {
           if (props.title === "Experience") {
-            return <ExperienceCard key={cardInfo.id} cardInfo={cardInfo} />
+            return <ExperienceCard key={cardInfo._id} cardInfo={cardInfo} />
           } else {
-            return <ProjectCard key={cardInfo.id} cardInfo={cardInfo} />
+            return <ProjectCard key={cardInfo._id} cardInfo={cardInfo} />
           }
         })}
-      </AutoPlaySwipeableViews>
+      </SwipeableViews>
       <MobileStepper
         steps={maxSteps}
         position="static"

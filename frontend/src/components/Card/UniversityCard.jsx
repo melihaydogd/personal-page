@@ -1,6 +1,6 @@
 import { CardContent, Typography } from "@mui/material";
 import React from "react";
-import { dateOptions } from "../../utils";
+import { getMonthAndYear } from "../../utils";
 import { MyCard } from "./MyCard";
 
 export const UniversityCard = (props) => {
@@ -9,10 +9,10 @@ export const UniversityCard = (props) => {
       <img src={props.cardInfo.image} alt="university" height="320" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" m="0" mt="2rem">
-          {props.cardInfo.university}
+          {props.cardInfo?.university}
         </Typography>
         <Typography variant="p" color="text.secondary">
-          {props.cardInfo.degree} - GPA: {props.cardInfo.gpa}
+          {props.cardInfo?.degree} - GPA: {props.cardInfo?.gpa}
         </Typography>
         <br />
         <br />
@@ -24,12 +24,11 @@ export const UniversityCard = (props) => {
           fontWeight="300"
           fontStyle="italic"
         >
-          {props.cardInfo.location}
+          {props.cardInfo?.location}
           <br />
-          {props.cardInfo.startDate.toLocaleString(
-            "default",
-            dateOptions
-          )} - {props.cardInfo.endDate.toLocaleString("default", dateOptions)}
+          {getMonthAndYear(props.cardInfo?.startDate)}{" "}
+          -{" "}
+          {getMonthAndYear(props.cardInfo?.endDate)}
         </Typography>
       </CardContent>
     </MyCard>

@@ -1,5 +1,6 @@
 import { Box, CardContent, Typography } from "@mui/material";
 import React from "react";
+import { getYear } from "../../utils";
 import { MyCard } from "./MyCard";
 
 export const ActivityCard = (props) => {
@@ -33,15 +34,9 @@ export const ActivityCard = (props) => {
           fontWeight="300"
           fontStyle="italic"
         >
-          {props.cardInfo.startDate.toLocaleString("default", {
-            year: "numeric",
-          })}{" "}
+          {getYear(props.cardInfo?.startDate)}{" "}
           -{" "}
-          {props.cardInfo.endDate === null
-            ? "Present"
-            : props.cardInfo.endDate.toLocaleString("default", {
-                year: "numeric",
-              })}
+          {getYear(props.cardInfo?.endDate)}
         </Typography>
       </CardContent>
     </MyCard>
