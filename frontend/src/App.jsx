@@ -68,7 +68,7 @@ export const App = () => {
         color={"text.primary"}
         sx={{
           backgroundImage:
-            theme.palette.mode === "light" ? "url(https://www.transparenttextures.com/patterns/brushed-alum-dark.png)": "url(https://www.transparenttextures.com/patterns/binding-dark.png)",
+            theme.palette.mode === "light" ? "url(brushed-alum-dark.png)": "url(binding-dark.png)",
         }}
       >
         <Navbar toggleTheme={toggleTheme} />

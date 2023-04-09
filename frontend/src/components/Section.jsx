@@ -26,7 +26,7 @@ export const Section = (props) => {
           }}
         >
           {props.cardInfo?.map((cardInfo) => {
-            return <SkillsCard key={cardInfo._id} cardInfo={cardInfo} />;
+            return <SkillsCard key={cardInfo?._id} cardInfo={cardInfo} />;
           })}
         </Box>
       );

@@ -6,7 +6,7 @@ import { MyCard } from "./MyCard";
 export const UniversityCard = (props) => {
   return (
     <MyCard>
-      <img src={props.cardInfo.image} alt="university" height="320" />
+      <img src={props.cardInfo?.image} alt="university" height="320" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" m="0" mt="2rem">
           {props.cardInfo?.university}

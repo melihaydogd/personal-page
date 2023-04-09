@@ -6,7 +6,7 @@ export const Title = () => {
         <Box
             padding="7.5rem"
             paddingTop={{ xs: "2rem", md: "7.5rem" }}
-            paddingBottom="14.4rem"
+            paddingBottom="16rem"
         >
             <Stack
                 direction={{ xs: "column", md: "row" }}

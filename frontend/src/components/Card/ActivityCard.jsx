@@ -7,7 +7,7 @@ export const ActivityCard = (props) => {
   return (
     <MyCard sx={{ maxWidth: "max-content" }}>
       <Box display="flex" justifyContent="center">
-        <img src={props.cardInfo.image} alt="activity" height="320" />
+        <img src={props.cardInfo?.image} alt="activity" height="320" />
       </Box>
       <CardContent sx={{ width: "max-content" }}>
         <Typography
@@ -19,10 +19,10 @@ export const ActivityCard = (props) => {
           whiteSpace="nowrap"
           width="fit-content"
         >
-          {props.cardInfo.title}
+          {props.cardInfo?.title}
         </Typography>
         <Typography variant="p" color="text.secondary">
-          {props.cardInfo.role}
+          {props.cardInfo?.role}
         </Typography>
         <br />
         <br />

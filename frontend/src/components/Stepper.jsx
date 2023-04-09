@@ -15,7 +15,7 @@ const springConfig = {
 export const Stepper = (props) => {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
-    const maxSteps = props.cardInfo.length;
+    const maxSteps = props.cardInfo?.length;
 
     const handleStepChange = (step) => {
         setActiveStep(step);
@@ -35,14 +35,14 @@ export const Stepper = (props) => {
                     if (props.title === "Experience") {
                         return (
                             <ExperienceCard
-                                key={cardInfo._id}
+                                key={cardInfo?._id}
                                 cardInfo={cardInfo}
                             />
                         );
                     } else {
                         return (
                             <ProjectCard
-                                key={cardInfo._id}
+                                key={cardInfo?._id}
                                 cardInfo={cardInfo}
                             />
                         );
