@@ -1,5 +1,4 @@
 import { Box, styled, ThemeProvider } from "@mui/material";
-import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { lightTheme, darkTheme } from "./theme";
 import { Contact } from "./components/Contact/Contact";
@@ -32,9 +31,9 @@ export const App = () => {
   const [activity, setActivity] = useState({});
 
   useEffect(() => {
-    const cookieMode = Cookies.get("theme");
-    if (cookieMode) {
-      setTheme(cookieMode === "dark" ? darkTheme : lightTheme);
+    const mode = localStorage.getItem("theme");
+    if (mode) {
+      setTheme(mode === "dark" ? darkTheme : lightTheme);
     }
 
     
@@ -58,7 +57,7 @@ export const App = () => {
   function toggleTheme(checked) {
     const newMode = checked ? "light" : "dark";
     setTheme(newMode === "dark" ? darkTheme : lightTheme);
-    Cookies.set("theme", newMode);
+    localStorage.setItem("theme", newMode);
   }
 
   return (
