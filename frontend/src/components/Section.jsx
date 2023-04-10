@@ -11,7 +11,7 @@ export const Section = (props) => {
   function card() {
     if (props.title === "Education") {
       return <UniversityCard cardInfo={props.cardInfo} />;
-    } else if (props.title === "Experience") {
+    } else if (props.title === "Experiences") {
       return <Stepper cardInfo={props.cardInfo} title={props.title} />;
     } else if (props.title === "Skills") {
       return (

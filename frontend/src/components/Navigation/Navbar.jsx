@@ -13,8 +13,8 @@ const sections = [
   },
   {
     key: 2,
-    section: "Experience",
-    href: "#experience",
+    section: "Experiences",
+    href: "#experiences",
   },
   {
     key: 3,

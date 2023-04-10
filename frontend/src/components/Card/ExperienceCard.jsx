@@ -19,7 +19,7 @@ export const ExperienceCard = (props) => {
           width="300"
         />
       </Box>
-      <CardContent>
+      <CardContent sx={{ height: "12rem" }}>
         <Typography gutterBottom variant="h5" component="div" m="0" mt="2rem">
           {props.cardInfo?.role}
         </Typography>
@@ -30,9 +30,8 @@ export const ExperienceCard = (props) => {
         <Typography variant="p" color="text.secondary">
           {props.cardInfo?.description}
         </Typography>
-        <br />
-        <br />
-        <br />
+      </CardContent>
+      <CardContent>
         <Typography
           variant="p"
           color="text.secondary"

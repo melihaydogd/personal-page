@@ -42,7 +42,7 @@ export const Stepper = (props) => {
         threshold={1}
       >
         {props.cardInfo?.map((cardInfo) => {
-          if (props.title === "Experience") {
+          if (props.title === "Experiences") {
             return <ExperienceCard key={cardInfo?._id} cardInfo={cardInfo} />;
           } else {
             return <ProjectCard key={cardInfo?._id} cardInfo={cardInfo} />;

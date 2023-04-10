@@ -75,7 +75,7 @@ export const App = () => {
         <LeftCrookedDivider theme={theme} />
         <Section id="education" title="Education" cardInfo={education} />
         <RightCrookedDivider theme={theme} />
-        <Section id="experience" title="Experience" cardInfo={experience} />
+        <Section id="experiences" title="Experiences" cardInfo={experience} />
         <LeftCrookedDivider theme={theme} />
         <Section id="skills" title="Skills" cardInfo={skill} />
         <RightCrookedDivider theme={theme} />
