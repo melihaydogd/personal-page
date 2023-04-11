@@ -5,20 +5,17 @@ import { MyCard } from "./MyCard";
 
 export const ActivityCard = (props) => {
   return (
-    <MyCard sx={{ maxWidth: "max-content" }}>
+    <MyCard>
       <Box display="flex" justifyContent="center">
-        <img src={props.cardInfo?.image} alt="activity" height="320" />
+        <img
+          src={props.cardInfo?.image}
+          alt="activity"
+          width="330"
+          height="320"
+        />
       </Box>
-      <CardContent sx={{ width: "max-content" }}>
-        <Typography
-          gutterBottom
-          variant="h5"
-          component="div"
-          m="0"
-          mt="2rem"
-          whiteSpace="nowrap"
-          width="fit-content"
-        >
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div" m="0" mt="2rem">
           {props.cardInfo?.title}
         </Typography>
         <Typography variant="p" color="text.secondary">
@@ -34,8 +31,7 @@ export const ActivityCard = (props) => {
           fontWeight="300"
           fontStyle="italic"
         >
-          {getYear(props.cardInfo?.startDate)}{" "}
-          -{" "}
+          {getYear(props.cardInfo?.startDate)} -{" "}
           {getYear(props.cardInfo?.endDate)}
         </Typography>
       </CardContent>
