@@ -4,50 +4,51 @@ const lightDefault = "#dfdbcd";
 const blackDefault = "black";
 
 const MuiAvatar = {
-    styleOverrides: {
-        img: {
-            transform: "scale(1.3)",
-        },
+  styleOverrides: {
+    img: {
+      transform: "scale(1.3)",
+      marginTop: "5.5rem",
     },
+  },
 };
 
 export const lightTheme = createTheme({
-    palette: {
-        mode: "light",
-        background: {
-            default: lightDefault,
-        },
+  palette: {
+    mode: "light",
+    background: {
+      default: lightDefault,
     },
-    components: {
-        MuiMobileStepper: {
-            styleOverrides: {
-                dotActive: {
-                    backgroundColor: blackDefault,
-                },
-            },
+  },
+  components: {
+    MuiMobileStepper: {
+      styleOverrides: {
+        dotActive: {
+          backgroundColor: blackDefault,
         },
-        MuiAvatar,
+      },
     },
+    MuiAvatar,
+  },
 });
 
 export const darkTheme = createTheme({
-    palette: {
-        mode: "dark",
-        background: {
-            default: blackDefault,
-        },
-        text: {
-            primary: lightDefault,
-        },
+  palette: {
+    mode: "dark",
+    background: {
+      default: blackDefault,
     },
-    components: {
-        MuiMobileStepper: {
-            styleOverrides: {
-                dotActive: {
-                    backgroundColor: lightDefault,
-                },
-            },
-        },
-        MuiAvatar,
+    text: {
+      primary: lightDefault,
     },
+  },
+  components: {
+    MuiMobileStepper: {
+      styleOverrides: {
+        dotActive: {
+          backgroundColor: lightDefault,
+        },
+      },
+    },
+    MuiAvatar,
+  },
 });
